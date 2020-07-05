@@ -6,3 +6,9 @@ TRAPS = {
     "flavor": ["Fiery","Freezing","Necrotic","Poisonous","Acidic","Thunderous","Lightning","Forceful","Diseased","Stunning","Blinding","Deafening","Weakening","Draining","Sleep-inducing","Binding","Dominating","Psychic","Maddening","Confusing"],
     "trigger": ["Door","Floor plate","Tripwire","Throne","Corpse","Chest","Old book","Child’s toy","Jeweled skull","Beams of light","Golden angelic statue","Crystal goblet on pedestal","Onyx demonic skull","Jeweled pillar","Steep stair","Jeweled crown","Gilded sarcophagus","Bound prisoner","Weapon on an altar","Idol on pedestal"]
 }
+MONUMENTS = {
+    "condition": ["Crumbling","Sunken","Pristine","Excavated","Vine-covered","Ruined","Cracked","Shattered","Buried","Gore-covered","Bloody","Glyph-marked","Rune-scribed","Obsidian","Metallic","Ornate","Desecrated","Ancient","Decorated","Floating"],
+    "origin": ["Draconic","Dwarven","Elven","Primeval","Divine","Unholy","Abyssal","Otherworldly","Orcish","Undead","Goblinoid","Ghoulish","Vampiric","Dark elven","Astral","Ethereal","Hellish","Demonic","Elemental","Gnomish"],
+    "type": ["Obelisk","Pillar","Tomb","Monolith","Ruin","Mosaic","Ship","Altar","Shrine","Tree","Statue","Stone circle","Throne","Podium","Rock","Fossil","Fountain","Mausoleum","Gravestone","Cairn","Geode","Skull","Barrow","Well","Meteorite","Archway","Battlefield","Charnel pit","Slaughter field","Siege engine","Tower","Lectern","Pool","Orb","Sarcophagus","Banner","Standing stone","Machine","Construct","Keep","Sundial","Mirror","Spire","Bridge","Sinkhole","Effigy","Gallows","Ziggurat","Crystal","Idol"],
+    "effect": ["Undeath","Fire","Madness","Water","Radiance","Arcane","Poison","Acid","Disease","Psionics","Frost","Lightning","Antimagic","Ooze","Charming","Fear","Domination","Sleep","Thunder","Tentacles"]
+}

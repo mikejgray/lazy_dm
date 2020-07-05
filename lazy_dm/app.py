@@ -34,12 +34,14 @@ def traps():
 def monuments():
     return render_template("monuments.html", monument=generate_monument())
 
-@app.route("/magic_items", methods=["GET"])
-def magic_items():
+@app.route("/items", methods=["GET"])
+def items():
     return render_template("items.html",
                             weapon=generate_item("weapon"),
                             armor=generate_item("armor"),
-                            healing=generate_item("healing"))
+                            healing=generate_item("healing"),
+                            mundane=generate_item("mundane"),
+                            spell_effect=generate_item("spell_effect"))
 
 
 # Helper functions
@@ -75,12 +77,16 @@ def generate_monument() -> dict:
 
 def generate_item(item_type: str) -> Optional[dict]:
     """Generate a random magical item with condition, origin. Item types are healing, weapon, or armor."""
-    if item_type not in ("healing", "weapon", "armor"):
+    if item_type not in ("healing", "weapon", "armor", "mundane", "spell_effect"):
         return None
     seed()
     items = app.config["ITEMS"]
     if item_type == "healing":
         return choice(items["healing"])
+    if item_type == "mundane":
+        return choice(items["mundane"])
+    if item_type == "spell_effect":
+        return choice(items["spell_effect"])
     return {"condition": choice(items["condition"]),
             "origin": choice(items["origin"]),
             "type": choice(items[item_type])

@@ -1,7 +1,7 @@
 {# _lazy_dm/templates/items.html_ #}
 
 {% extends "index.html" %}
-{% block title %}Magic Items{% endblock %}
+{% block title %}Items{% endblock %}
 {% block body %}
     {{ super() }}
 
@@ -13,9 +13,9 @@
 
 <p>Also included on the “Items” page is a table noting the four types of healing potion and how many hit points each potion restores.
 
-<h2>Magic Items:</h2>
-
 <h2>Weapon: {{ weapon["condition"] }} {{ weapon["origin"] }} {{ weapon["type"] }}</h2>
 <h2>Armor: {{ armor["condition"] }} {{ armor["origin"] }} {{ armor["type"] }}</h2>
 <h2>Healing Potion: {{ healing }}</h2>
+<h2>Mundane Item: {{ mundane }}</h2>
+<h2>Spell Effect: {{ spell_effect }}</h2>
 {% endblock %}

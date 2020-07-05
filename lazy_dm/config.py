@@ -12,3 +12,10 @@ MONUMENTS = {
     "type": ["Obelisk","Pillar","Tomb","Monolith","Ruin","Mosaic","Ship","Altar","Shrine","Tree","Statue","Stone circle","Throne","Podium","Rock","Fossil","Fountain","Mausoleum","Gravestone","Cairn","Geode","Skull","Barrow","Well","Meteorite","Archway","Battlefield","Charnel pit","Slaughter field","Siege engine","Tower","Lectern","Pool","Orb","Sarcophagus","Banner","Standing stone","Machine","Construct","Keep","Sundial","Mirror","Spire","Bridge","Sinkhole","Effigy","Gallows","Ziggurat","Crystal","Idol"],
     "effect": ["Undeath","Fire","Madness","Water","Radiance","Arcane","Poison","Acid","Disease","Psionics","Frost","Lightning","Antimagic","Ooze","Charming","Fear","Domination","Sleep","Thunder","Tentacles"]
 }
+ITEMS = {
+    "origin": ["Draconic","Dwarven","Elven","Primeval","Divine","Unholy","Abyssal","Otherworldly","Orcish","Undead","Goblinoid","Ghoulish","Vampiric","Dark elven","Astral","Ethereal","Hellish","Demonic","Elemental","Gnomish"],
+    "condition": ["Grimy","Chipped","Rough","Smooth","Ancient","Crumbling","Pristine","Cool","Ornate","Plain","Rune-scribed","Carved","Decorated","Delicate","Burned","Oily","Pulsing","Glowing","Shining","Smoldering"],
+    "weapon": ["Dagger","Mace","Quarterstaff","Spear","Light crossbow","Shortbow","Battleaxe","Flail","Glaive","Greataxe","Greatsword","Longsword","Maul","Morningstar","Rapier","Scimitar","Shortsword","Warhammer","Heavy crossbow","Longbow"],
+    "armor": ["Leather","Studded leather","Hide","Chain shirt","Scale mail","Breastplate","Half plate","Ring mail","Chain mail","Splint","Plate","Shield"],
+    "healing": ["Healing (Common) 2d4+2", "Greater healing (Uncommon) 4d4+4", "Superior healing (Rare) 8d4+8", "Supreme healing (Very rare) 10d4+20"]
+}

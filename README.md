@@ -13,6 +13,7 @@ Eventually this will be easier, and support something besides poetry, but for no
 
 ## Features
 
-* Random Names (`/name`)
+* Random Names (`/names`)
 * Random Traps (`/traps`)
 * Random Monuments (`/monuments`)
+* Random Magic Items (`/magic_items`)

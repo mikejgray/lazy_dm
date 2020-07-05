@@ -10,6 +10,12 @@
     <body>
     {% block body %}
         <h1>Lazy DM's Guide Generator</h1>
+        {# https://stackoverflow.com/questions/13151161/display-links-to-new-webpages-created/13161594#13161594 #}
+        <ul>
+        {% for url, endpoint in links %}
+            <li><a href="{{ url }}">{{ endpoint }}</a></li>
+        {% endfor %}
+        </ul>
     {% endblock %}
     {% block footer %}
     <p><em>All material copyright SlyFlourish (Michael E. Shea) from his outstanding "The Lazy DM's Workbook." I just wrote this to make my lazy DMing easier.</em>

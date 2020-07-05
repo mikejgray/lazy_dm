@@ -1,0 +1,21 @@
+{# _lazy_dm/templates/items.html_ #}
+
+{% extends "index.html" %}
+{% block title %}Magic Items{% endblock %}
+{% block body %}
+    {{ super() }}
+
+<h2><b>Items:</b></h2>
+
+<p>The “Items” page allows you to generate all sorts of useful relics and objects, from mundane discoveries to powerful magical artifacts. As with the other sections, you can choose which of the tables you want to roll on, depending on your goal. If you want to come up with an interesting magic weapon, for example, you might roll on the Item Condition, Item Origin, Weapon, and Spell Effect tables. If you just want a weird mundane item, roll on the Item Condition, Item Origin, and Mundane Item tables without adding any effect.
+
+<p>Some strange relics might allow a single use of a powerful magical spell. Roll on the Item Condition, Item Origin, Mundane Item, and Spell Effect table to generate a unique single-use magical relic.
+
+<p>Also included on the “Items” page is a table noting the four types of healing potion and how many hit points each potion restores.
+
+<h2>Magic Items:</h2>
+
+<h2>Weapon: {{ weapon["condition"] }} {{ weapon["origin"] }} {{ weapon["type"] }}</h2>
+<h2>Armor: {{ armor["condition"] }} {{ armor["origin"] }} {{ armor["type"] }}</h2>
+<h2>Healing Potion: {{ healing }}</h2>
+{% endblock %}

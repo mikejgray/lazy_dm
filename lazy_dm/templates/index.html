@@ -1,0 +1,15 @@
+{# _lazy_dm/templates/index.html_ #}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <title>{% block title %}Lazy DM's Guide Generator{% endblock %}</title>
+    </head>
+    <body>
+    {% block body %}
+        <h1>Lazy DM's Guide Generator</h1>
+    {% endblock %}
+    </body>
+</html>

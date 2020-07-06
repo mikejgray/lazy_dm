@@ -43,6 +43,14 @@ def items():
                             mundane=generate_item("mundane"),
                             spell_effect=generate_item("spell_effect"))
 
+@app.route("/events", methods=["GET"])
+def events():
+    return render_template("events.html",
+                            mundane_event=generate_event("mundane"),
+                            town_sentiment=generate_event("town_sentiment"),
+                            notable_weather=generate_event("weather"),
+                            fantastic_event=generate_event("fantastic"))
+
 
 # Helper functions
 def has_no_empty_params(rule) -> bool:
@@ -76,7 +84,11 @@ def generate_monument() -> dict:
 
 
 def generate_item(item_type: str) -> Optional[dict]:
-    """Generate a random magical item with condition, origin. Item types are healing, weapon, or armor."""
+    """Generate a random magical item with condition, origin.
+    
+    Item types are healing, weapon, armor, mundane, or spell_effect.
+    """
+
     if item_type not in ("healing", "weapon", "armor", "mundane", "spell_effect"):
         return None
     seed()
@@ -91,3 +103,13 @@ def generate_item(item_type: str) -> Optional[dict]:
             "origin": choice(items["origin"]),
             "type": choice(items[item_type])
     }
+
+
+def generate_event(event_type: str) -> Optional[dict]:
+    """Generate a random town event. Event types are mundane, town_sentiment, weather, or fantastic."""
+    
+    if event_type not in ("mundane", "town_sentiment", "weather", "fantastic"):
+        return None
+    seed()
+    events = app.config["EVENTS"]
+    return choice(events[event_type])

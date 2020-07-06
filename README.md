@@ -17,3 +17,4 @@ Eventually this will be easier, and support something besides poetry, but for no
 * Random Traps (`/traps`)
 * Random Monuments (`/monuments`)
 * Random Magic Items (`/magic_items`)
+* Random Town Events (`/events`)

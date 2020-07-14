@@ -145,7 +145,7 @@ func handleRequests() {
 	myRouter.HandleFunc("/v1/monuments", getMonument)
 	myRouter.HandleFunc("/v1/events", getEvent)
 	myRouter.HandleFunc("/v1/items", getItem)
-	log.Fatal(http.ListenAndServe(":2020", c.Handler(myRouter)))
+	log.Fatal(http.ListenAndServe(":8080", c.Handler(myRouter)))
 }
 
 func main() {

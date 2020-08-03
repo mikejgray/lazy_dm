@@ -30,10 +30,62 @@ The site itself can be hosted in a cloud provider bucket, such as AWS S3 or GCP 
 * Random Names (`/names`)
 * Random Traps (`/traps`)
 * Random Monuments (`/monuments`)
-* Random Magic Items (`/magic_items`)
+* Random Magic Items (`/items`)
 * Random Town Events (`/events`)
 
+### Endpoint Query Strings
+
+Each endpoint accepts a `?type=` query string that conforms to the individual types for each endpoint:
+
+`/names`:
+
+* given
+* surname
+
+`/traps`:
+
+* type
+* flavor
+* trigger
+
+`/monuments`:
+
+* condition
+* origin
+* type
+* effect
+
+`/events`:
+
+* mundane
+* weather
+* sentiment
+* fantastic
+
+`/items`:
+
+* origin
+* condition
+* weapon
+* armor
+* healing
+* mundane
+* spellEffect
+
+**Example:**
+
+`https://localhost:8080/v1/items?type=spellEffect` will return something to the effect of:
+
+```json
+{"origin":["None"],"condition":["None"],"weapon":["None"],"armor":["None"],"healing":["None"],"mundane":["None"],"spellEffect":["Insect plague"]}
+```
+
 ## API TODO Items
-* Break out to individual types in the path so you can request multiple specific resources
-* Work out database options, or allow for JSON import
-* Consider adding separate database table/custom JSON for adding custom resources
+* Clean up individual type requests so it only returns the necessary data
+* All for a `?count` query parameter to return numerous items
+
+## UI TODO Items
+* Add radio buttons for endpoint types
+* Add count slider for multiple responses
+* Add checkboxes to combine multiple endpoint type responsese
+* Create a magic puzzle box that can be manipulated to return random endpoint information

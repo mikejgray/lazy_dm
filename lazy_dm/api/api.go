@@ -364,7 +364,15 @@ func getItem(w http.ResponseWriter, r *http.Request) {
 
 	keyType, ok := r.URL.Query()["type"]
 	if !ok || len(keyType[0]) < 1 {
-		json.NewEncoder(w).Encode(randomItem())
+		json.NewEncoder(w).Encode(&items{
+			Origin:      []string{allTables.Items.Origin[rand.Intn(len(allTables.Items.Origin))]},
+			Condition:   []string{allTables.Items.Condition[rand.Intn(len(allTables.Items.Condition))]},
+			Weapon:      []string{allTables.Items.Weapon[rand.Intn(len(allTables.Items.Weapon))]},
+			Armor:       []string{allTables.Items.Armor[rand.Intn(len(allTables.Items.Armor))]},
+			Healing:     []string{allTables.Items.Healing[rand.Intn(len(allTables.Items.Healing))]},
+			Mundane:     []string{allTables.Items.Mundane[rand.Intn(len(allTables.Items.Mundane))]},
+			SpellEffect: []string{allTables.Items.SpellEffect[rand.Intn(len(allTables.Items.SpellEffect))]},
+		})
 	} else {
 		key := keyType[0]
 		json.NewEncoder(w).Encode(randomItem(key))

@@ -4,7 +4,7 @@ function getName() {
     namePlace = document.getElementById('name');
     fetch(`${Api}/v1/names`)
         .then(response => response.json())
-        .then(data => namePlace.textContent = `${data.given} ${data.surname}`);
+        .then(data => namePlace.textContent = `${data.given[0]} ${data.surname[0]}`);
 };
 
 function getEvent() {
@@ -12,7 +12,7 @@ function getEvent() {
     fetch(`${Api}/v1/events`)
         .then(response => response.json())
         .then(data => eventPlace.innerHTML = (
-            `<p>Mundane Event: ${data.mundane}<p>Town Sentiment: ${data.sentiment}<p>Notable Weather: ${data.weather}<p>Fantastic Event: ${data.fantastic}`
+            `<p>Mundane Event: ${data.mundane[0]}<p>Town Sentiment: ${data.sentiment[0]}<p>Notable Weather: ${data.weather[0]}<p>Fantastic Event: ${data.fantastic[0]}`
         ));
 };
 
@@ -21,7 +21,7 @@ function getMonument() {
     fetch(`${Api}/v1/monuments`)
         .then(response => response.json())
         .then(data => namePlace.innerHTML =
-            `${data.condition} ${data.origin} ${data.type} with a ${data.effect} effect`);
+            `${data.condition[0]} ${data.origin[0]} ${data.type[0]} with a ${data.effect[0]} effect`);
 };
 
 function getTrap() {
@@ -29,7 +29,7 @@ function getTrap() {
     fetch(`${Api}/v1/traps`)
         .then(response => response.json())
         .then(data => eventPlace.innerHTML = (
-            `<p>Type: ${data.type}<p>Flavor: ${data.flavor}<p>Trigger: ${data.trigger}`
+            `<p>Type: ${data.type[0]}<p>Flavor: ${data.flavor[0]}<p>Trigger: ${data.trigger[0]}`
         ));
 };
 
@@ -38,7 +38,7 @@ function getItem() {
     fetch(`${Api}/v1/items`)
         .then(response => response.json())
         .then(data => eventPlace.innerHTML = (
-            `<p>Origin: ${data.origin}<p>Condition: ${data.condition}<p>Weapon: ${data.weapon}<p>Armor: ${data.armor}<p>Healing: ${data.healing}<p>Mundane: ${data.mundane}<p>Spell Effect: ${data.spell_effect}`
+            `<p>Origin: ${data.origin[0]}<p>Condition: ${data.condition[0]}<p>Weapon: ${data.weapon[0]}<p>Armor: ${data.armor[0]}<p>Healing: ${data.healing[0]}<p>Mundane: ${data.mundane[0]}<p>Spell Effect: ${data.spell_effect[0]}`
         ));
 };
 

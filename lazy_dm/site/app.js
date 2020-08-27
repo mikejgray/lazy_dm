@@ -1,4 +1,4 @@
-var Api = 'http://localhost:2020'
+var Api = 'https://dm-api.graywind.org'
 
 function getName() {
     namePlace = document.getElementById('name');

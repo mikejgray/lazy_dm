@@ -1,13 +1,14 @@
-import os
+from os import path, getcwd
 from json import loads
 from random import randint
 
 from fastapi import FastAPI, HTTPException
+from mangum import Mangum
 from pydantic import BaseSettings
 
 
 class Settings(BaseSettings):
-    GENERATOR_TABLES_LOC = os.path.join(os.getcwd(), "lazy_dm_api", "data", "tables.json")
+    GENERATOR_TABLES_LOC = path.join(getcwd(), "data", "tables.json")
 
 
 def generate_random(base: str, subtype: str):
@@ -120,3 +121,5 @@ async def get_item(kind: str):
         return {kind: generate_random("items", kind)}
     else:
         raise HTTPException(status_code=404, detail=f"Item type not found. Valid types are {', '.join(types)}.")
+
+handler = Mangum(app=app)

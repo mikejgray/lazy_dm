@@ -4,19 +4,22 @@
 
 ## Installation/Running
 
-* To build the API as a binary:
+- To build the API as a binary:
+
 ```go
 go build ./lazy_dm/api/api.go
 ```
 
-* To run the API as a Docker container:
+- To run the API as a Docker container:
+
 ```bash
 cd ./lazy_dm/api
 docker build --pull --rm -t lazydm:latest
 docker run -p 8080:8080 --rm -d lazydm:latest
 ```
 
-* To run in GCP App Engine:
+- To run in GCP App Engine:
+
 ```bash
 git clone https://github.com/mikejgray/lazy_dm
 cd ./lazy_dm/api
@@ -27,11 +30,11 @@ The site itself can be hosted in a cloud provider bucket, such as AWS S3 or GCP 
 
 ## API Endpoints
 
-* Random Names (`/names`)
-* Random Traps (`/traps`)
-* Random Monuments (`/monuments`)
-* Random Magic Items (`/items`)
-* Random Town Events (`/events`)
+- Random Names (`/names`)
+- Random Traps (`/traps`)
+- Random Monuments (`/monuments`)
+- Random Magic Items (`/items`)
+- Random Town Events (`/events`)
 
 ### Endpoint Query Strings
 
@@ -39,53 +42,64 @@ Each endpoint accepts a `?type=` query string that conforms to the individual ty
 
 `/names`:
 
-* given
-* surname
+- given
+- surname
 
 `/traps`:
 
-* type
-* flavor
-* trigger
+- type
+- flavor
+- trigger
 
 `/monuments`:
 
-* condition
-* origin
-* type
-* effect
+- condition
+- origin
+- type
+- effect
 
 `/events`:
 
-* mundane
-* weather
-* sentiment
-* fantastic
+- mundane
+- weather
+- sentiment
+- fantastic
 
 `/items`:
 
-* origin
-* condition
-* weapon
-* armor
-* healing
-* mundane
-* spellEffect
+- origin
+- condition
+- weapon
+- armor
+- healing
+- mundane
+- spellEffect
 
 **Example:**
 
 `https://localhost:8080/v1/items?type=spellEffect` will return something to the effect of:
 
 ```json
-{"origin":["None"],"condition":["None"],"weapon":["None"],"armor":["None"],"healing":["None"],"mundane":["None"],"spellEffect":["Insect plague"]}
+{
+  "origin": ["None"],
+  "condition": ["None"],
+  "weapon": ["None"],
+  "armor": ["None"],
+  "healing": ["None"],
+  "mundane": ["None"],
+  "spellEffect": ["Insect plague"]
+}
 ```
 
 ## API TODO Items
-* Clean up individual type requests so it only returns the necessary data
-* All for a `?count` query parameter to return numerous items
+
+- Clean up individual type requests so it only returns the necessary data
+- All for a `?count` query parameter to return numerous items
 
 ## UI TODO Items
-* Add radio buttons for endpoint types
-* Add count slider for multiple responses
-* Add checkboxes to combine multiple endpoint type responsese
-* Create a magic puzzle box that can be manipulated to return random endpoint information
+
+- Add radio buttons for endpoint types
+- Add count slider for multiple responses
+- Add checkboxes to combine multiple endpoint type responsese
+- Create a magic puzzle box that can be manipulated to return random endpoint information
+- https://codepen.io/SaxManMike/pen/JjWwqJm
